@@ -1,13 +1,16 @@
 {
-    "suporte_category_id": 1418409183791026279,
-    "suporte_channel_id": 1418409185623674970,
+    "suporte_category_id": 1418424279015624764,
+    "suporte_channel_id": 1418424280160407723,
     "mod_channel_id": 1418402180905304064,
     "log_channel_id": 1418401850985676940,
     "1365040682976415855": {
-        "suporte_logs_channel_id": 1418409219706851338,
-        "log_channel_id": 1418407638445719674
+        "suporte_logs_channel_id": 1418422112728645632,
+        "mod_channel_id": 1404193590963601460,
+        "log_channel_id": 1418422065651912764
     },
     "1418400766489788579": {
-        "log_channel_id": 1418407703616684143
+        "mod_channel_id": 1418424225265352714,
+        "suporte_logs_channel_id": 1418424409978310836,
+        "log_channel_id": 1418424649108426954
     }
 }

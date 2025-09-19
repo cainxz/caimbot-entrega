@@ -31,7 +31,7 @@ async def on_ready():
 @bot.tree.command(name="ping", description="Responde com uma mensagem de teste.")
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message(
-        f"{interaction.user.mention} pinga uma sugada aqui no meu ovo filho da puta!"
+        f"{interaction.user.mention} pong!"
     )
 
 
