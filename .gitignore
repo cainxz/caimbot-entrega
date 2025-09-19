@@ -1,2 +1,12 @@
+# Arquivos de ambiente
 .env
-.env
+*.env
+
+# Pastas de cache/venv
+__pycache__/
+.venv/
+*.pyc
+
+# Logs
+logs/
+*.log
