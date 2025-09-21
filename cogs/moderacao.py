@@ -252,10 +252,10 @@ class Moderacao(commands.Cog):
         await interaction.followup.send(embed=embed, ephemeral=True)
 
     # ---------------- SPAM ----------------
-    @tasks.loop(seconds=60)
+    @tasks.loop(seconds=1)  
     async def check_spam(self):
         for user_id, times in list(self.user_message_times.items()):
-            self.user_message_times[user_id] = [t for t in times if (datetime.utcnow() - t).seconds < 60]
+            self.user_message_times[user_id] = [t for t in times if (datetime.utcnow() - t).total_seconds() < 3]
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -263,9 +263,12 @@ class Moderacao(commands.Cog):
             return
         user_id = str(message.author.id)
         self.user_message_times.setdefault(user_id, []).append(datetime.utcnow())
-        if len(self.user_message_times[user_id]) > 5:
-            await message.channel.send(f"{message.author.mention}, você está enviando mensagens rápido demais!", delete_after=5)
-            await message.delete()
+        if len(self.user_message_times[user_id]) > 15:
+            try:
+                await message.channel.send(f"{message.author.mention}, você está enviando mensagens rápido demais!", delete_after=3)
+                await message.delete()
+            except:
+                pass
 
 # ---------------- SETUP ----------------
 async def setup(bot: commands.Bot):
